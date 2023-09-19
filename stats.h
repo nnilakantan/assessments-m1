@@ -9,13 +9,13 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <stats.h> 
+ * @brief <First peer reviewed assignment>
  *
- * <Add Extended Description Here>
+ * <stats.h of the first peer reviewed assignment>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author <Nikhil Nilakantan>
+ * @date <09/18/2023>
  *
  */
 #ifndef __STATS_H__
@@ -24,17 +24,23 @@
 /* Add Your Declarations and Function Comments here */ 
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Printing statistics of a given array
  *
- * <Add Extended Description Here>
+ * Function to print statistics of given array
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param minimum minimum of array
+ * @param maximum maximum of array
+ * @param mean mean of array
+ * @param median median of array
  *
- * @return <Add Return Informaiton here>
+ * @return void
  */
-
+void print_stats (unsigned char minimum, unsigned char maximum, float mean, unsigned char median);
+void print_array (unsigned char *array, unsigned int counter);
+unsigned char find_median (unsigned char *array, unsigned int counter);
+float find_mean (unsigned char *array, unsigned int counter);
+unsigned char find_maximum (unsigned char *array, unsigned int counter);
+unsigned char find_minimum (unsigned char *array, unsigned int counter);
+void sort_array (unsigned char *array, unsigned int counter);
 
 #endif /* __STATS_H__ */
