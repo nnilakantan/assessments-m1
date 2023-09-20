@@ -107,7 +107,7 @@ float find_mean (unsigned char array[]){
 float find_maximum (unsigned char array[]){
 	int maximum =0;
 	for(int i=0;i<SIZE;i++){
-		if(maximum<TEST[i]){
+		if(maximum<test[i]){
 			maximum=test[i];
 		}
 	}  
@@ -117,7 +117,7 @@ return maximum;
 float find_minimum (unsigned char array[]){
 	int minimum =0;
 	for(int i=0;i<SIZE;i++){
-		if(minimum>TEST[i]){
+		if(minimum>test[i]){
 			minimum=test[i];
 		}
 	}  
