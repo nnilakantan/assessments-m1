@@ -37,23 +37,37 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
-  unsigned char minimum = 0;
-  unsigned char maximum = 0;
+  int minimum = 0;
+  int maximum = 0;
   float mean = 0;
-  unsigned char median = 0;
+  float median = 0;
+  unsigned char sort_array [SIZE];
 
   /* Statistics and Printing Functions Go Here */
   printf("Array before sorting: \n");
-  print_array(&test, SIZE);
-  median = find_median(&test, SIZE);
-  mean = find_mean(&test, SIZE);
-  maximum = find_maximum(&test, SIZE);
-  minimum = find_minimum(&test, SIZE);
+  print_array(test);
+  median = find_median(test);
+  mean = find_mean(test);
+  maximum = find_maximum(test);
+  minimum = find_minimum(test);
   print_statistics(minimum, maximum, mean, median);
-  sort_array(&test, SIZE);
+  sort_array(test);
   printf("Array after sorting: \n");
-  print_array(&test, SIZE);
-}
+  print_array(test);
+
+void sort_array (unsigned char test[])
+{
+	int i=0, j=0;
+	int temp = 0;
+	for (i=0; i<SIZE; i++) {
+		for (j=0; j<SIZE; j++) {
+			if (test[i]>test[j])	{
+				temp = test[i];
+				test[i]= test[j];
+				test[j]=temp;
+			}
+		}
+	}
 
 void print_statistics (unsigned char minimum, unsigned char maximum, float mean, unsigned char median){
   printf("The minimum is %d \n", minimum);
@@ -63,73 +77,49 @@ void print_statistics (unsigned char minimum, unsigned char maximum, float mean,
 }
 
 
-void print_array (unsigned char *array, unsigned int counter){
-  for (int i=0; i<counter; i++){
-    printf("%d,", *(array + i));
+void print_array (unsigned test[]){
+  for (int i=0; i<SIZE; i++){
+    printf("%d,", test[i]);
   }
   printf("\n");
 }
 
-unsigned char find_median (unsigned char *array, unsigned int counter){
-  unsigned char median = 0;
-  median = *(array + (counter / 2) -1);
-  return median;
+float find_median (unsigned char array[]){
+float median = 0; 
+int i =0;
+if (SIZE % 2==0){
+	median = sort_array[SIZE/2] + sort_array[SIZE/2-1])/2;
+	}
+return median;
+
 }
 
-float find_mean (unsigned char *array, unsigned int counter){
-  unsigned int accumulator = 0; // variable to store the accumulator value throughout the mean finding process
-  float mean = 0;
-  for (int i=0; i<counter; i++){
-    accumulator = accumulator + array[i] /* *(array + i) */;
-  }
-  printf("acc = %d \n", accumulator);
-  mean = accumulator / ((float) counter); //must type cast one of the two integers to float for accurate calculation.
-  return mean;
+float find_mean (unsigned char array[]){
+	float mean = 0;
+  	for (int i=0; i<SIZE; i++){
+    		mean = mean +test[i];
+	}
+	mean=mean/(SIZE+1);
+	return mean;
 }
 
-unsigned char find_maximum (unsigned char *array, unsigned int counter){
-  unsigned char maximum = *array; // initalize the maximum variable with the value of the first array element
-  for (int i=1; i<counter; i++){ // start the loop from the second elemnt
-    if (*(array + i) > maximum){
-      maximum = *(array + i);
-    }
-    else {} // do nothing.
-  }
-  return maximum;
+
+float find_maximum (unsigned char array[]){
+	int maximum =0;
+	for(int i=0;i<SIZE;i++){
+		if(maximum<TEST[i]){
+			maximum=test[i];
+		}
+	}  
+return maximum;
 }
 
-unsigned char find_minimum (unsigned char *array, unsigned int counter){
-  unsigned char minimum = *array; // initalize the minimum variable with the value of the first array element
-  for (int i=1; i<counter; i++){ // start the loop from the second elemnt
-    if (*(array + i) < minimum){
-      minimum = *(array + i);
-    }
-    else {} // do nothing.
-  }
-  return minimum;
+float find_minimum (unsigned char array[]){
+	int minimum =0;
+	for(int i=0;i<SIZE;i++){
+		if(minimum>TEST[i]){
+			minimum=test[i];
+		}
+	}  
+return minimum;
 }
-
-void sort_array (unsigned char *array, unsigned int counter){
-  char flag = 0; //this flag is to indicate if a swap process has occurred at least once in the loop
-  unsigned char temp;
-  do {
-    flag =0; //set flag to default at every new 'do' operation
-    for (int index=0; index<counter; index++){
-      if (array[index] > array[index +1] || array[index] == array[index +1]) {
-        continue;
-      }
-      else if (array[index] < array[index +1]) {
-        //swap elements//
-        temp = array[index];
-        array[index] = array[index+1];
-        array[index+1] = temp;
-
-        flag = 1; // a swap process has occurred at least once in this loop
-      }
-    }
-  }
-  while (flag ==1); // the array is not sorted as long as a swap operation is occurred at least once
-}
-}
-
-/* Add other Implementation File Code Here */
