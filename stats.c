@@ -121,7 +121,7 @@ return maximum;
 float find_minimum (unsigned char test[]){
 	int minimum =0;
 	for(int i=0;i<SIZE;i++){
-		if(minimum>test[i]){
+		if(test[i]<minimum){
 			minimum=test[i];
 		}
 	}  
