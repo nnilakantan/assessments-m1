@@ -36,11 +36,11 @@
  * @return void
  */
 void print_statistics (int minimum, int maximum, float mean, float median);
-void print_array (unsigned char array[]);
-float find_median (unsigned char array[]);
-float find_mean (unsigned char array[]);
-int find_minimum (unsigned char array[]);
-int find_maximum (unsigned char array[]);
-void sort_array (unsigned char array[]);
+void print_array (unsigned char test[]);
+float find_median (unsigned char test[]);
+float find_mean (unsigned char test[]);
+int find_minimum (unsigned char test[]);
+int find_maximum (unsigned char test[]);
+void sort_array (unsigned char test[]);
 
 #endif /* __STATS_H__ */
