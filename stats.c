@@ -29,7 +29,7 @@
 
 void main() {
 
-  unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
+  unsigned char test [SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
                               200, 122, 150, 90,   92,  87, 177, 244,
                               201,   6,  12,  60,   8,   2,   5,  67,
@@ -85,19 +85,19 @@ void print_array (unsigned char test[]) {
   printf("\n");
 }
 
-float find_median (unsigned char array[]) {
+float find_median (unsigned char test[]) {
 int i = 0, median = 0;
 if (SIZE % 2==0) {
-	median = (sorted_array [SIZE/2] + sorted_array [SIZE/2 - 1] )/2;
+	median = (sort_array [SIZE/2] + sort_array [SIZE/2 - 1] )/2;
 	}
 	else {
-		median = sorted_array [(SIZE/2)];
+		median = sort_array [(SIZE/2)];
 	}
 return median;
 
 }
 
-float find_mean (unsigned char array[]){
+float find_mean (unsigned char test[]){
 	float mean = 0;
   	for (int i=0; i<SIZE; i++){
     		mean = mean + test[i];
@@ -107,7 +107,7 @@ float find_mean (unsigned char array[]){
 }
 
 
-float find_maximum (unsigned char array[]){
+float find_maximum (unsigned char test[]){
 	int maximum =0;
 	for(int i=0;i<SIZE;i++){
 		if(maximum<test[i]){
