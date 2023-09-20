@@ -55,8 +55,7 @@ void main() {
   printf("Array after sorting: \n");
   print_array(test);
 
-void sort_array (unsigned char test[])
-{
+void sort_array (unsigned char test[]){
 	int i=0, j=0;
 	int temp = 0;
 	for (i=0; i<SIZE; i++) {
@@ -69,7 +68,7 @@ void sort_array (unsigned char test[])
 		}
 	}
 
-void print_statistics (unsigned char minimum, unsigned char maximum, float mean, unsigned char median){
+void print_statistics (int minimum, int maximum, float mean, float median){
   printf("The minimum is %d \n", minimum);
   printf("The maximum is %d \n", maximum);
   printf("The mean is %f \n", mean);
@@ -77,17 +76,17 @@ void print_statistics (unsigned char minimum, unsigned char maximum, float mean,
 }
 
 
-void print_array (unsigned test[]){
+void print_array (unsigned test[]) {
   for (int i=0; i<SIZE; i++){
     printf("%d,", test[i]);
   }
   printf("\n");
 }
 
-float find_median (unsigned char array[]){
+float find_median (unsigned char array[]) {
 float median = 0; 
 int i =0;
-if (SIZE % 2==0){
+if (SIZE % 2==0) {
 	median = (sorted_array[SIZE/2] + sorted_array[SIZE/2-1])/2;
 	}
 return median;
@@ -122,4 +121,5 @@ float find_minimum (unsigned char array[]){
 		}
 	}  
 return minimum;
+}
 }
