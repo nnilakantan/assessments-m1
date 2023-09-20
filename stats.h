@@ -35,12 +35,12 @@
  *
  * @return void
  */
-void print_stats (unsigned char minimum, unsigned char maximum, float mean, unsigned char median);
-void print_array (unsigned char *array, unsigned int counter);
-unsigned char find_median (unsigned char *array, unsigned int counter);
-float find_mean (unsigned char *array, unsigned int counter);
-unsigned char find_maximum (unsigned char *array, unsigned int counter);
-unsigned char find_minimum (unsigned char *array, unsigned int counter);
-void sort_array (unsigned char *array, unsigned int counter);
+void print_statistics (int minimum, int maximum, float mean, float median);
+void print_array (unsigned char array[]);
+float find_median (unsigned char array[]);
+float find_mean (unsigned char array[]);
+int find_minimum (unsigned char array[]);
+int find_maximum (unsigned char array[]);
+void sort_array (unsigned char array[]);
 
 #endif /* __STATS_H__ */
