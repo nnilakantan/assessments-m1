@@ -89,7 +89,7 @@ float find_median (unsigned char array[]) {
 float median = 0; 
 int i =0;
 if (SIZE % 2==0) {
-	median = (sorted_array[SIZE/2] + sorted_array[SIZE/2-1])/2;
+	median = (sort_array[SIZE/2] + sort_array[SIZE/2-1])/2;
 	}
 return median;
 
@@ -98,7 +98,7 @@ return median;
 float find_mean (unsigned char array[]){
 	float mean = 0;
   	for (int i=0; i<SIZE; i++){
-    		mean = mean +test[i];
+    		mean = mean + test[i];
 	}
 	mean=mean/(SIZE+1);
 	return mean;
