@@ -54,6 +54,7 @@ void main() {
   sort_array(test);
   printf("Array after sorting: \n");
   print_array(test);
+}
 
 void sort_array (unsigned char test[]){
 	int i=0, j=0;
@@ -122,5 +123,4 @@ float find_minimum (unsigned char array[]){
 		}
 	}  
 return minimum;
-}
 }
