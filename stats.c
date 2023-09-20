@@ -41,7 +41,7 @@ void main() {
   int maximum = 0;
   float mean = 0;
   float median = 0;
-  unsigned char sort_array [SIZE];
+  unsigned char sorted_array [SIZE];
 
   /* Statistics and Printing Functions Go Here */
   printf("Array before sorting: \n");
@@ -88,7 +88,7 @@ float find_median (unsigned char array[]){
 float median = 0; 
 int i =0;
 if (SIZE % 2==0){
-	median = sort_array[SIZE/2] + sort_array[SIZE/2-1])/2;
+	median = (sorted_array[SIZE/2] + sorted_array[SIZE/2-1])/2;
 	}
 return median;
 
