@@ -46,14 +46,14 @@ void main() {
   /* Statistics and Printing Functions Go Here */
   printf("Array before sorting: \n");
   print_array(test);
+  sort_array(test);
+  printf("Array after sorting: \n");
+  print_array(test);
   median = find_median(test);
   mean = find_mean(test);
   maximum = find_maximum(test);
   minimum = find_minimum(test);
   print_statistics(minimum, maximum, mean, median);
-  sort_array(test);
-  printf("Array after sorting: \n");
-  print_array(test);
 }
 
 void sort_array (unsigned char test[]){
@@ -88,7 +88,6 @@ void print_array (unsigned char test[]) {
 float find_median (unsigned char sorted_array[]) {
 int i = 0; 
 float median = 0;
-sort_array (test);
 if (SIZE % 2 == 0) {
 	median = (sorted_array[SIZE/2] + sorted_array[SIZE/2 + 1])/2;
 	return median;
