@@ -88,10 +88,10 @@ void print_array (unsigned char test[]) {
 float find_median (unsigned char test[]) {
 int i = 0, median = 0;
 if (SIZE % 2==0) {
-	median = (sort_array [SIZE/2] + sort_array [SIZE/2 - 1] )/2;
+	median = (sorted_array [SIZE/2] + sorted_array [SIZE/2 - 1] )/2;
 	}
 	else {
-		median = sort_array [(SIZE/2)];
+		median = sorted_array [(SIZE/2)];
 	}
 return median;
 
@@ -117,7 +117,7 @@ float find_maximum (unsigned char test[]){
 return maximum;
 }
 
-float find_minimum (unsigned char array[]){
+float find_minimum (unsigned char test[]){
 	int minimum =0;
 	for(int i=0;i<SIZE;i++){
 		if(minimum>test[i]){
