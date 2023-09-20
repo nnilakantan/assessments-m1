@@ -78,7 +78,7 @@ void print_statistics (int minimum, int maximum, float mean, float median){
 }
 
 
-void print_array (unsigned test[]) {
+void print_array (unsigned char test[]) {
   for (int i=0; i<SIZE; i++){
     printf("%d,", test[i]);
   }
