@@ -67,6 +67,7 @@ void sort_array (unsigned char test[]){
 			}
 		}
 	}
+}
 
 void print_statistics (int minimum, int maximum, float mean, float median){
   printf("The minimum is %d \n", minimum);
