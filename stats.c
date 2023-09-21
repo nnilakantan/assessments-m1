@@ -27,7 +27,7 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
-void main() {
+int main() {
 
   unsigned char test [SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
@@ -37,11 +37,12 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
+  
+  unsigned char sorted_array [SIZE];
   int minimum = 0;
   int maximum = 0;
   float mean = 0;
   float median = 0;
-  unsigned char sorted_array [SIZE];
 
   /* Statistics and Printing Functions Go Here */
   printf("Array before sorting: \n");
@@ -58,7 +59,7 @@ void main() {
 
 void sort_array (unsigned char test[]){
 	int i=0, j=0;
-	int temp = 0;
+	unsigned char temp = 0;
 	for (i=0; i<SIZE; i++) {
 		for (j=0; j<SIZE; j++) {
 			if (test[i]>test[j])	{
@@ -74,7 +75,7 @@ void print_statistics (int minimum, int maximum, float mean, float median){
   printf("The minimum is %d \n", minimum);
   printf("The maximum is %d \n", maximum);
   printf("The mean is %f \n", mean);
-  printf("The median is %d \n", median);
+  printf("The median is %f \n", median);
 }
 
 void print_array (unsigned char test[]) {
